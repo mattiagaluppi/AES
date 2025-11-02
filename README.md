@@ -2,9 +2,9 @@ Work in progress.
 
 Structure of the project:
 
-include
-  |____ aes.h
-  |____ ... headers ...
-src
-  |____ aes.c
-  |____ ... core files ...
+include <br>
+  |____ aes.h<br>
+  |____ ... headers ...<br>
+src<br>
+  |____ aes.c<br>
+  |____ ... core files ...<br>
