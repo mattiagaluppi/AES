@@ -83,4 +83,25 @@ static void shift_rows(uint8_t state[4][4]) {
     }
 }
 
+/**
+ * Mixes the columns of the state matrix using matrix multiplication
+ * in GF(2^8). This provides diffusion in the cipher.
+ *
+ * @param state 4x4 state array
+ */
+static void mix_columns(uint8_t state[4][4]){
+    for (int c = 0; c < 4; ++c) {
+        uint8_t a0 = state[0][c];
+        uint8_t a1 = state[1][c];
+        uint8_t a2 = state[2][c];
+        uint8_t a3 = state[3][c];
+        
+        uint8_t t = a0 ^ a1 ^ a2 ^ a3;
+
+        state[0][c] ^= t ^ xtime(a0 ^ a1);
+        state[1][c] ^= t ^ xtime(a1 ^ a2);
+        state[2][c] ^= t ^ xtime(a2 ^ a3);
+        state[3][c] ^= t ^ xtime(a3 ^ a0);
+    }
+}
 
