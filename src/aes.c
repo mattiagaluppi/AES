@@ -59,15 +59,6 @@ static void sub_bytes(uint8_t state[4][4]){
 /**
  * Cyclically shifts the rows of the state matrix.
  * - Row 1 is shifted 1 position to the left
- * - Row 2 is shifted 2 position to the left
- * - Row 3 is shifted 3 postiion to the left
- */
-static void shift_rows(uint8_t state[4][4]){
-    uint8_t tmp[4];
-    /* row 1: shift left 1 */
-    /**
- * Cyclically shifts the rows of the state matrix.
- * - Row 1 is shifted 1 position to the left
  * - Row 2 is shifted 2 positions to the left
  * - Row 3 is shifted 3 positions to the left
  * 
